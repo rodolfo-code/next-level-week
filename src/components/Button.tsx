@@ -1,13 +1,11 @@
-import { useState } from "react"
+import {ButtonHTMLAttributes} from 'react'
 
-export function Button() {
-  const [state, setstate] = useState(0)
+import '../styles/button.scss'
 
-  function handleClick() {
-    setstate(state + 1)
-    console.log(state)
-  }
-  return (
-    <button onClick={handleClick}>{state}</button>
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+
+export function Button(props: ButtonProps) {
+    return (
+    <button className="button" {...props} />
   )
 }
